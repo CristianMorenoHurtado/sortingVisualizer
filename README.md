@@ -1,0 +1,1 @@
+This project visualizes how several common sorting methods work.
