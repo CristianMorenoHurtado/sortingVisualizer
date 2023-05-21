@@ -29,7 +29,7 @@ export default class SortingVisualizer extends React.Component {
         const array = [];
         let length = this.state.arraySize
         for (let i = 0; i < length; i++) {
-            array.push(randomIntFromIntervals(5, 750));
+            array.push(randomIntFromIntervals(5, 500));
         }
         this.setState({ array });
     }
@@ -128,7 +128,7 @@ export default class SortingVisualizer extends React.Component {
             console.log(arraysAreEqual(javaScriptSortedArray, mergeSortedArray));
         }
     }
-    
+
     increaseArray() {
         this.setState({
             arraySize: this.state.arraySize >= 300 ? 300 : this.state.arraySize + 25
@@ -148,25 +148,25 @@ export default class SortingVisualizer extends React.Component {
                 <h1>Sorting Visualizer</h1>
                 <div className='btn-container'>
                     <ButtonGroup className='array-btn-container' role="group">
-                        <Button variant='secondary' 
+                        <Button variant='secondary'
                             onClick={()=> this.decreaseArray()}>
                             <FontAwesomeIcon icon="fa-solid fa-minus" />
                         </Button>
-                        <Button variant='secondary' 
+                        <Button variant='secondary'
                             onClick={() => this.resetArray()}>
                             Generate New Array: {this.state.arraySize} Bars
                         </Button>
-                        <Button variant='secondary' 
+                        <Button variant='secondary'
                             onClick={()=> this.increaseArray()}>
                             <FontAwesomeIcon icon="fa-solid fa-plus" />
-                        </Button>  
+                        </Button>
                     </ButtonGroup>
                     <div className='algo-btn-container'>
-                        <button className='algo-btn' 
+                        <button className='algo-btn'
                             onClick={() => {this.quickSort()}}>Quick Sort</button>
-                        <button className='algo-btn' 
+                        <button className='algo-btn'
                             onClick={() => this.mergeSort()}>Merge Sort</button>
-                        <button className='algo-btn' 
+                        <button className='algo-btn'
                             onClick={() => this.bubbleSort()}>Bubble Sort</button>
                     </div>
                 </div>
